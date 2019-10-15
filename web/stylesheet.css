@@ -1,0 +1,6 @@
+main > .container {
+  margin-top: 60px;
+}
+
+.card-title{ text-transform: capitalize;
+}
