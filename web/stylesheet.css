@@ -4,3 +4,13 @@ main > .container {
 
 .card-title{ text-transform: capitalize;
 }
+
+.relative-size
+{
+  max-height: 10%;
+}
+
+main > .contain{
+  margin-top: 60px;
+  max-height: 10%;
+}
