@@ -19,40 +19,56 @@
 <body>
 
   <header class="fixed-top">
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="./img/spicy_logo.png" alt="spicy_logo" style="max-height: 64px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item">
-                <a href="index.html">
-                    <img src="./img/spicy_logo.jpg" alt="spicy_logo">
-                </a>
-            </li> -->
-            <li class="nav-item">
-                <a href="">
-                    <img class="" src=./img/drink3_v2.png title="Beer"> 
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="">
-                    <img class="" src=./img/drink2_v2.png title="Liquor"> 
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="">
-                    <img class="" src=./img/drink1_v2.png title="Wine"> 
-                </a>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav mr-left">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Beer<span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Sign In</button>
+            <a class="nav-link" href="#">Liquor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Wine</a>
           </li>
         </ul>
+        <ul class="navbar-nav mr-left">
+            <li class="nav-item">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Search</button>
+              </form>
+              <li class="nav-item">
+  
+                <button class="btn btn-outline-info my-2 my-sm-0 " type="submit">Log In</button>
+              </li>
+              <li class="nav-item">
+                <ul class="navbar-nav ml-auto ml-md-0">
+                  <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cart-arrow-down"></i>
+              </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cartDropdown">
+                      <div id="cartDropdownItems"></div>
+                      <a href="/checkout">
+                  <button class="btn btn-outline-info my-2 my-sm-0 right shoppingDropdownButton">
+                    Check Out
+                  </button>
+                </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+          </ul>
       </div>
     </nav>
-
   </header>
 
   <main role="main">
@@ -60,46 +76,49 @@
     <div class="container">
 
     <div class="row">
-    <div class="col-sm-2">
-        hello
-    </div>
+      <div id="here" class="col-sm-3">
+          hello
+      </div>
 
-    <div class="col-lg-10">
-        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-      <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1507679622673-989605832e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" class="card-img-top" alt="bootstraplogo">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="col-lg-9">
+          <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <!-- <div class="row">
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <img src="https://images.unsplash.com/photo-1507679622673-989605832e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" class="card-img-top" alt="bootstraplogo">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card  h-100">
-                <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" class="card-img-top" alt="bootstraplogo">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card  h-100">
+                  <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" class="card-img-top" alt="bootstraplogo">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card  h-100">
-                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2251&q=80" class="card-img-top" alt="bootstraplogo">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card  h-100">
+                  <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2251&q=80" class="card-img-top" alt="bootstraplogo">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
                 </div>
               </div>
-            </div>
-    
-        </div>
-    </div>
+      
+        </div> -->
+
+        <div id="displaywatchesdiv" class="row displaydiv">This is a div named "displaywatchesdiv" inside of a container div and a row div </div>
+
+      </div>
     </div>
 
     </div> 
