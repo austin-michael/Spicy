@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/f4f9881b-3151-467b-863b-b0204ea6015d/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/spicydrinks"
+}
