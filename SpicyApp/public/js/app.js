@@ -14,6 +14,7 @@ const shoppingCartData = {
 }
 
 function Watch(props) {
+  console.log(props)
     const watch = props.watch;
     return html`
       <div key=${watch.id} className="col-lg-4 col-md-6 col-mb-4">
@@ -339,7 +340,7 @@ window.render = function render() {
   );
 };
 
-/*fetch('/api/getProducts').then(response => {
+fetch('/api/Products').then(response => {
     if (response.ok) {
         return response.json();
     } else {
@@ -349,14 +350,26 @@ window.render = function render() {
   window.watches = data;
   filteredWatches = watches.products.slice();
   render();
-});*/
+});
 
-fetch('/api/Products').then(response => {
-    if (response.ok) {
-        return response.json();
-    } else {
-        throw Error("Something went wrong with that request:", response.statusText);
-    }
+fetch('/api/liquor').then(response => {
+  if (response.ok) {
+      return response.json();
+  } else {
+      throw Error("Something went wrong with that request:", response.statusText);
+  }
+}).then(function (data) {
+  window.watches = data;
+  filteredWatches = watches.products.slice();
+  render();
+});
+
+fetch('/api/wine').then(response => {
+  if (response.ok) {
+      return response.json();
+  } else {
+      throw Error("Something went wrong with that request:", response.statusText);
+  }
 }).then(function (data) {
   window.watches = data;
   filteredWatches = watches.products.slice();
