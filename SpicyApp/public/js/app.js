@@ -65,6 +65,7 @@ function SortCriteria(props) {
 }
 
 function SortingOptions(props) {
+  console.log(props)
   const {
     watch,
     sortProp,
@@ -73,7 +74,7 @@ function SortingOptions(props) {
     onSortOrderChange
   } = props;
   // props to exclude from the sort
-  const propsExcludedFromSort = new Set(["id", "img"]);
+  const propsExcludedFromSort = new Set(["id", "img", "type"]);
   const searchableProps = Object.keys(watch)
     // filter out excluded props
     .filter(keyProperty => !propsExcludedFromSort.has(keyProperty))
