@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     res.render("index", {
       // This gets rendered as the browsers title
       // it is passed into the ejs page as the variable 'title'
-      title: "My Watch Shop",
+      title: "Spicy - Beer",
       user: req.user && {
         "id": req.user.id,
         "email": req.user.email, 
@@ -16,6 +16,35 @@ router.get("/", (req, res) => {
       }
     });
   });
+
+router.get("/liquorproducts", (req, res) => {
+  // renders the index.ejs page
+  res.render("index", {
+    // This gets rendered as the browsers title
+    // it is passed into the ejs page as the variable 'title'
+    title: "Spicy - Liquor",
+    user: req.user && {
+      "id": req.user.id,
+      "email": req.user.email, 
+      "displayName": req.user.displayName
+    }
+  });
+});
+
+router.get("/wineproducts", (req, res) => {
+  // renders the index.ejs page
+  res.render("index", {
+    // This gets rendered as the browsers title
+    // it is passed into the ejs page as the variable 'title'
+    title: "Spicy - Wine",
+    user: req.user && {
+      "id": req.user.id,
+      "email": req.user.email, 
+      "displayName": req.user.displayName
+    }
+  });
+});
+
 
 ////// User Sign up and login is explained roughly here
 ////// https://scotch.io/tutorials/easy-node-authentication-setup-and-local

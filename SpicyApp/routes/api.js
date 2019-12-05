@@ -57,6 +57,65 @@ router.get("/products", async (req, res) => {
   const products = await sqlFetch`
     SELECT *
     FROM products
+    WHERE type = 'Beer'
+    ORDER BY id
+    OFFSET ${offset} ROWS
+    FETCH NEXT ${count} ROWS ONLY
+    `;
+  res.json({
+    products: products,
+    count: findAllCount,
+    pageNum: Math.ceil(findAllCount / count)
+  });
+});
+
+router.get("/liquor", async (req, res) => {
+  const allProductsCount = await sqlFetch`
+			SELECT COUNT(id) as count
+       FROM products
+       WHERE type = 'liquor'
+     `;
+  const findAllCount = allProductsCount[0].count;
+  let [page, count] = getPageAndCount(
+    req.query.page,
+    req.query.count,
+    // get first row of returned results
+    findAllCount
+  );
+  const offset = count * (page - 1);
+  const products = await sqlFetch`
+    SELECT *
+    FROM products
+    WHERE type = 'liquor'
+    ORDER BY id
+    OFFSET ${offset} ROWS
+    FETCH NEXT ${count} ROWS ONLY
+    `;
+  res.json({
+    products: products,
+    count: findAllCount,
+    pageNum: Math.ceil(findAllCount / count)
+  });
+});
+
+router.get("/wine", async (req, res) => {
+  const allProductsCount = await sqlFetch`
+			SELECT COUNT(id) as count
+       FROM products
+       WHERE type = 'wine'
+     `;
+  const findAllCount = allProductsCount[0].count;
+  let [page, count] = getPageAndCount(
+    req.query.page,
+    req.query.count,
+    // get first row of returned results
+    findAllCount
+  );
+  const offset = count * (page - 1);
+  const products = await sqlFetch`
+    SELECT *
+    FROM products
+    WHERE type = 'wine'
     ORDER BY id
     OFFSET ${offset} ROWS
     FETCH NEXT ${count} ROWS ONLY
