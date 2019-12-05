@@ -340,38 +340,54 @@ window.render = function render() {
   );
 };
 
-fetch('/api/Products').then(response => {
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  return vars;
+}
+
+var productType = getUrlVars()["type"];
+
+if (productType == "beer"){
+  fetch('/api/Products').then(response => {
     if (response.ok) {
         return response.json();
     } else {
         throw Error("Something went wrong with that request:", response.statusText);
     }
-}).then(function (data) {
-  window.watches = data;
-  filteredWatches = watches.products.slice();
-  render();
-});
+  }).then(function (data) {
+    window.watches = data;
+    filteredWatches = watches.products.slice();
+    render();
+  });
+}
 
-fetch('/api/liquor').then(response => {
-  if (response.ok) {
-      return response.json();
-  } else {
-      throw Error("Something went wrong with that request:", response.statusText);
-  }
-}).then(function (data) {
-  window.watches = data;
-  filteredWatches = watches.products.slice();
-  render();
-});
+if (productType == "liquor"){
+  fetch('/api/liquor').then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw Error("Something went wrong with that request:", response.statusText);
+    }
+  }).then(function (data) {
+    window.watches = data;
+    filteredWatches = watches.products.slice();
+    render();
+  });
+}
 
-fetch('/api/wine').then(response => {
-  if (response.ok) {
-      return response.json();
-  } else {
-      throw Error("Something went wrong with that request:", response.statusText);
-  }
-}).then(function (data) {
-  window.watches = data;
-  filteredWatches = watches.products.slice();
-  render();
-});
+if (productType == "wine"){
+  fetch('/api/wine').then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw Error("Something went wrong with that request:", response.statusText);
+    }
+  }).then(function (data) {
+    window.watches = data;
+    filteredWatches = watches.products.slice();
+    render();
+  });
+}
