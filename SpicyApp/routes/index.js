@@ -58,7 +58,7 @@ router.get("/login", function(req, res) {
 
 router.post("/login", function(req, res, next, ...args) {
   return passport.authenticate("local-login", {
-    successRedirect: "/",
+    successRedirect: "/?type=beer",
     failureRedirect: "/login",
     failureFlash: true
   })(req, res, next, ...args);
@@ -75,7 +75,7 @@ router.get("/signup", function(req, res) {
 router.post(
   "/signup",
   passport.authenticate("local-signup", {
-    successRedirect: "/", // redirect to the secure profile section
+    successRedirect: "/?type=beer", // redirect to the secure profile section
     failureRedirect: "/signup", // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   })
@@ -83,7 +83,7 @@ router.post(
 
 router.get("/logout", function(req, res) {
   req.logout();
-  res.redirect("/");
+  res.redirect("/?type=beer");
 });
 
 
