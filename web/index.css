@@ -5,3 +5,9 @@ main > .container {
 .card-title{ 
   text-transform: capitalize;
 }
+
+img {
+  width: 50%;
+  height: 5vw;
+  object-fit: cover;
+}

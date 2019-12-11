@@ -18,7 +18,7 @@ function Watch(props) {
     const watch = props.watch;
     return html`
       <div key=${watch.id} className="col-lg-4 col-md-6 col-mb-4">
-        <div className="card h-100">
+        <div className="card">
           <img
          src=${"/img/watches/" + watch.img}
             className="card-img-top"
@@ -74,7 +74,8 @@ function SortingOptions(props) {
     onSortOrderChange
   } = props;
   // props to exclude from the sort
-  const propsExcludedFromSort = new Set(["id", "img", "type"]);
+  const propsExcludedFromSort = new Set(["id", "img", "type", "description"]);
+  console.log(watch)
   const searchableProps = Object.keys(watch)
     // filter out excluded props
     .filter(keyProperty => !propsExcludedFromSort.has(keyProperty))
